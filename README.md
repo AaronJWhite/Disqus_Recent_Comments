@@ -17,6 +17,7 @@ Adding Your Parameters
 - **filterUsers**: A comma delimited list of *author names* whose comments you do not want to show in the recent comment list. No spaces before or after the commas.  $filterUsers = "One Name,Two Name" not $filterUsers = "One Name, SpaceBefore Name". **Note:** Author names are different from usernames in Disqus. The author name is what shows up when someone makes a comment.
 - **filterLimit**: If filterUsers is used this is the numer of comments we ask the Disqus API to send back. By default the number zero is 3 times your comment limit
 - **dateFormat**: Format you want to use for comment post dates. Check php manual for formatting options.
+- **useRelativeTime**: If set to true the script will ignore the dateFormat parameter and use relative times like "one hour ago"
 - **commentLength**: Max character count of comments
 - **apiVersion**: Version of Disqus api
 - **resource**: Disqus resource to grad data from. Probably want to leave this alone.
