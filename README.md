@@ -8,12 +8,18 @@ Using the Code
 
 This class should work on any server running PHP v5+. 
 Simple create a new comment object like so:
+```php
 	$disqus = new RecentComments('[forum_name]', '[publikc_key]');
+```
 Now you have a comment object using the default options. Use the getComments functions to display your comments like so:
+```php
 	echo($disqus->getComments());
+```
 Alternatively you can pass an array to the contructor that will overwrite the default options like so:
+```php
 	$options= array("cache"=>false,"commentLimit"=>50);
 	$disqus = new RecentComments('[FORUM_NAME]', '[PUBLIC_KEY]', $options);
+```
 The options that are avaialable are described below.
 
 
