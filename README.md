@@ -40,4 +40,24 @@ Initial Options
 
 Creating a Custom Template
 ----------------------
-**Will add description later**
+You can define the output for each comment by setting a template.
+A template is just a string of HTML and brackets around specific keywords in all caps.
+The example below would set a template that shows only the author name and avatar for each comment.
+```php
+	$disqus = new RecentComments('[forum_name]', '[publikc_key]');
+	$strTemplate = '<div class="commentWrap"><span>{AUTHOR_NAME}</span><br/><img src="{AUTHOR_AVATAR}" alt="{AUTHOR_NAME}" /></div>';
+	$disqus->setTemplate($strTemplate);
+```
+**The keywords available for the template function are:**
+- **AUTHOR_NAME**: The commenter's name.
+- **AUTHOR_PROFILE**: The URL to the commenter's profile.
+- **AUTHOR_AVATAR**: The URL the to commenter's avatar.
+- **MESSAGE**: The actualy comment.
+- **THREAD_TITLE**: The title of the thread the comment belongs to.
+- **THREAD_LINK**: The URL to the thread.
+- **COMMENT_ID**: The ID of the comment.
+- **POST_TIME**: The time the comment was posted.
+- **ALTER**: The value of this keyword will alternate between being the string **alter** or a blank string.
+
+
+
