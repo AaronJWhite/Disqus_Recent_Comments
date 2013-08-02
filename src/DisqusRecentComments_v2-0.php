@@ -85,6 +85,11 @@ class RecentComments
     {
       return '<div id="dqRecentComments"><span id="dqNoComments">No Recent Comments Found</span></div>';
     }
+
+    if($this->commentResponse == 'You have exceeded your hourly limit of requests')
+    {
+      return '<div id="dqRecentComments"><span id="dqNoComments">No Recent Comments Found</span></div><!--hourly comment limit-->';
+    }
     //basic counter
     $commentCounter = 0;
     $recentComments = '<div id="dqRecentComments">';
