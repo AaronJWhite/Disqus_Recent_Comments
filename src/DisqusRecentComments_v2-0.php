@@ -96,6 +96,11 @@ class RecentComments
     $comment = $this->commentResponse;
     $filteredUsers = explode(",",$this->settings["filterUsers"]);
    
+    if(!is_array($comment))
+    {
+      return '<div id="dqRecentComments">No Recent Comments Found</div>';
+    }
+   
     foreach($comment as $commentObj)
     {
       $commentInfo =array();
@@ -141,7 +146,7 @@ class RecentComments
 
       $commentHtml = $this->useTemplate($this->commentTemplate,$commentInfo);
       $recentComments .= $commentHtml;
-      if($commentCounter == $styleParameter["commentLimit"])
+      if($commentCounter == $this->settings["commentLimit"])
       {
         break;
       }
